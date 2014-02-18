@@ -20,12 +20,15 @@ public class MainPage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
         
+        //Useless Button
         Button uselessButton = (Button)findViewById(R.id.button2);
+        //Onlclick method
         uselessButton.setOnClickListener(new OnClickListener(){
         	
         	@Override
 			public void onClick(View v) {
 				TextView title = (TextView)findViewById(R.id.helloWorld);
+				//Setting the string
 				title.setText("My First App");
 				
 			}
@@ -34,11 +37,17 @@ public class MainPage extends Activity {
         
     }
     
+    //Send name method.
     public void sendMessage(View view) {
+    	//Create new Intent
         Intent intent = new Intent(this, Hello_Name.class);
+        //Find the text area.
         EditText editText = (EditText) findViewById(R.id.nameHere);
+        //toString
         String message = editText.getText().toString();
+        //Put method into Intent.
         intent.putExtra(EXTRA_MESSAGE, message);
+        //Switch activities.
         startActivity(intent);
     }
 
